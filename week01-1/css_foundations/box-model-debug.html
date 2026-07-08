@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Foundations - Box Model & Cascade</title>
+
+    <style>
+        /* Global Fix */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f5f5f5;
+            padding:30px;
+            line-height:1.6;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        section{
+            background:white;
+            padding:20px;
+            margin-bottom:30px;
+            border-radius:8px;
+            box-shadow:0 2px 5px rgba(0,0,0,.1);
+        }
+
+        h2{
+            margin-bottom:15px;
+        }
+
+        /* Box Model */
+
+        .box{
+            width:250px;
+            padding:20px;
+            border:8px solid steelblue;
+            margin:20px 0;
+            background:lightblue;
+        }
+
+        /* Margin Collapse */
+
+        .top{
+            margin-bottom:40px;
+            background:salmon;
+            padding:15px;
+        }
+
+        .bottom{
+            margin-top:40px;
+            background:lightgreen;
+            padding:15px;
+        }
+
+        /* Cascade */
+
+        p{
+            color:blue;
+        }
+
+        .text{
+            color:red;
+        }
+
+        #special{
+            color:green;
+        }
+
+        /* Variables */
+
+        :root{
+            --primary:#6200ea;
+            --padding:15px;
+        }
+
+        .card{
+            background:var(--primary);
+            color:white;
+            padding:var(--padding);
+            border-radius:8px;
+        }
+
+        /* Inheritance */
+
+        .inherit{
+            color:purple;
+        }
+
+        /* Important */
+
+        .important{
+            color:red !important;
+        }
+
+        #important-id{
+            color:green;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>CSS Foundations</h1>
+
+<section>
+
+<h2>1. Box Model</h2>
+
+<div class="box">
+Width = 250px<br>
+Padding = 20px<br>
+Border = 8px
+</div>
+
+<p>Using <strong>box-sizing:border-box</strong>, total width remains 250px.</p>
+
+</section>
+
+<section>
+
+<h2>2. Margin Collapse</h2>
+
+<div class="top">
+Top Box
+</div>
+
+<div class="bottom">
+Bottom Box
+</div>
+
+<p>
+Both boxes have 40px margins. Because of margin collapsing, only one 40px gap appears.
+</p>
+
+</section>
+
+<section>
+
+<h2>3. Cascade & Specificity</h2>
+
+<p class="text" id="special">
+This text is GREEN because ID selector has the highest specificity.
+</p>
+
+</section>
+
+<section>
+
+<h2>4. CSS Variables</h2>
+
+<div class="card">
+This card uses CSS Variables.
+</div>
+
+</section>
+
+<section class="inherit">
+
+<h2>5. Inheritance</h2>
+
+<p>
+This paragraph inherits the purple text color from its parent.
+</p>
+
+</section>
+
+<section>
+
+<h2>6. !important</h2>
+
+<p class="important" id="important-id">
+This text is RED because !important overrides the ID selector.
+</p>
+
+</section>
+
+</body>
+</html>
