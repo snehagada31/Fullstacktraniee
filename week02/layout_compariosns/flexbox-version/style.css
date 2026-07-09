@@ -1,0 +1,67 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+}
+
+/* Header */
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* Flex Container */
+
+.container{
+
+    display:flex;
+
+    min-height:400px;
+}
+
+/* Sidebar */
+
+aside{
+
+    flex:1;
+
+    background:#d6eaf8;
+
+    padding:20px;
+}
+
+/* Main Content */
+
+main{
+
+    flex:3;
+
+    background:white;
+
+    padding:20px;
+}
+
+/* Footer */
+
+footer{
+
+    background:#2c3e50;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+}
