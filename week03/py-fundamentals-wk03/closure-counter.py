@@ -24,3 +24,8 @@ print(counter())
 print(counter())
 print(counter())
 print(counter())
+
+def greet(required_arg, *args, **kwargs):
+    print(required_arg)
+    print(*args, **kwargs)
+greet("Hello, World!", 1, 2, 3, 4, name="sneha", age=22)
