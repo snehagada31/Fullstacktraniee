@@ -14,12 +14,3 @@ if __name__ == "__main__":
 
     for number in fibonacci(10):
         print(number, end=" ")
-
-# fruits = ["apple", "mango", "banana"]
-
-# iterator = iter(fruits)
-
-# print(next(iterator))
-# print(next(iterator))
-# print(next(iterator))
-
