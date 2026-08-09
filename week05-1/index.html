@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 05-1 - Concurrency Patterns & Async Primitives</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            color: #333;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+
+        img {
+            width: 700px;
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Week 05-1: Concurrency Patterns & Async Primitives</h1>
+
+    <p>
+        This assignment focused on Python's asynchronous concurrency patterns,
+        including asyncio.Semaphore, asyncio.Queue, async context managers,
+        async task queues, concurrency limits, and asynchronous error handling.
+    </p>
+
+    <div class="section">
+
+        <h2>Async Concurrency Limiter</h2>
+
+        <p>
+            Implemented an asynchronous task queue using
+            <code>asyncio.Semaphore</code> to limit the number of coroutines
+            running concurrently. The implementation also demonstrates
+            error handling using <code>asyncio.gather()</code> with
+            <code>return_exceptions=True</code>.
+        </p>
+
+        <h3>Output</h3>
+
+        <img
+            src="screenshots/concurrency-limiter.png"
+            alt="Async Concurrency Limiter Output"
+        >
+
+    </div>
+
+    <div class="section">
+
+        <h2>Async Resource Pool</h2>
+
+        <p>
+            Implemented a fake asynchronous resource pool using
+            <code>asyncio.Queue</code>. The pool manages a limited number
+            of resources and uses an asynchronous context manager to
+            manage resource usage safely.
+        </p>
+
+        <h3>Output</h3>
+
+        <img
+            src="screenshots/resource-pool.png"
+            alt="Async Resource Pool Output"
+        >
+
+    </div>
+
+    <div class="section">
+
+        <h2>Test Results</h2>
+
+        <p>
+            Tested the concurrency limiter, resource pool, and asynchronous
+            context manager to verify that all implementations work correctly.
+        </p>
+
+        <h3>Output</h3>
+
+        <img
+            src="screenshots/tests.png"
+            alt="Async Assignment Test Results"
+        >
+
+    </div>
+
+</body>
+
+</html>
