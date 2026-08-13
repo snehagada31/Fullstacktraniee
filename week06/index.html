@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 06 - Packaging, Type Hints & Testing</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f5f6fa;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #ddd;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result img {
+            width: 100%;
+            max-width: 900px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        code {
+            background: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Week 06 — Packaging, Type Hints & Testing</h1>
+            <p>
+                Python project setup using Poetry, type safety with mypy,
+                and automated testing using pytest.
+            </p>
+        </header>
+
+        <section>
+            <h2>Topics Covered</h2>
+
+            <ul>
+                <li>Virtual environments and Poetry</li>
+                <li>pyproject.toml and dependency management</li>
+                <li>Python type hints</li>
+                <li>Static type checking with mypy</li>
+                <li>pytest fundamentals</li>
+                <li>Fixtures</li>
+                <li>Parametrized testing</li>
+                <li>Monkeypatching</li>
+                <li>Mocking with unittest.mock</li>
+                <li>Test coverage with pytest-cov</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Project Structure</h2>
+
+            <pre>
+week06/
+├── pyproject.toml
+├── poetry.lock
+├── README.md
+├── index.html
+├── src/
+│   ├── custom_decorators.py
+│   ├── functional_refactor.py
+│   ├── toy_event_loop.py
+│   └── concurrency_benchmark.py
+├── tests/
+│   ├── test_decorators.py
+│   └── test_event_loop.py
+└── screenshots/
+    ├── mypy-success.png
+    ├── pytest-results.png
+    └── coverage-report.png
+            </pre>
+        </section>
+
+        <section>
+            <h2>Mypy — Strict Type Checking</h2>
+
+            <p>
+                All four source files were checked using
+                <code>mypy --strict</code>.
+            </p>
+
+            <span class="status">Success — No Issues Found</span>
+
+            <div class="result">
+                <img src="screenshots/mypy-success.png"
+                    alt="Mypy strict type checking result">
+            </div>
+        </section>
+
+        <section>
+            <h2>Pytest Results</h2>
+
+            <p>
+                The project contains tests for the custom decorators
+                and toy event loop.
+            </p>
+
+            <span class="status">18 Tests Passed</span>
+
+            <div class="result">
+                <img src="screenshots/pytest_results.png"
+                    alt="Pytest test results">
+            </div>
+        </section>
+
+        <section>
+            <h2>Test Coverage</h2>
+
+            <p>
+                Coverage was measured using pytest-cov.
+                The required target was greater than 80% for the
+                custom decorators and toy event loop.
+            </p>
+
+            <ul>
+                <li>Custom Decorators: <strong>90%</strong></li>
+                <li>Toy Event Loop: <strong>83%</strong></li>
+            </ul>
+
+            <span class="status">Coverage Requirement Achieved</span>
+
+            <div class="result">
+                <img src="screenshots/coverage_report.png"
+                    alt="Pytest coverage report">
+            </div>
+        </section>
+
+        <section>
+            <h2>Assignment Outcome</h2>
+
+            <ul>
+                <li>Poetry-based Python project configured.</li>
+                <li>Dependencies managed through pyproject.toml.</li>
+                <li>Four source files successfully type-checked.</li>
+                <li>Mypy strict mode passed with no errors.</li>
+                <li>18 pytest tests passed.</li>
+                <li>Custom decorators achieved 90% coverage.</li>
+                <li>Toy event loop achieved 83% coverage.</li>
+            </ul>
+
+            <span class="status">Week 06 Assignment Completed</span>
+        </section>
+
+    </div>
+
+</body>
+
+</html>
