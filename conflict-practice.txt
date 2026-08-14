@@ -1,1 +1,2 @@
 This is branch A's version.
+This is branch B's version.
