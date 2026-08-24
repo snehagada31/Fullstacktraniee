@@ -3,7 +3,9 @@ import time
 from typing import Any, Callable, TypeVar, ParamSpec
 
 
-P = ParamSpec("P")
+
+P = ParamSpec("P") 
+
 R = TypeVar("R")
 
 
