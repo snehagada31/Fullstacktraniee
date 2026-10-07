@@ -14,6 +14,4 @@ if __name__ == "__main__":
 
     for number in fibonacci(10):
         print(number, end=" ")
-        
-        
-        
+
