@@ -14,6 +14,10 @@ if __name__ == "__main__":
 
     for number in fibonacci(10):
         print(number, end=" ")
+<<<<<<< HEAD
         
         
         
+=======
+
+>>>>>>> 6517b10b9637d4811963f94ea5750e9b98ca582e

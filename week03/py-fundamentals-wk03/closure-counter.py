@@ -23,4 +23,9 @@ print("===== Counter =====")
 print(counter())
 print(counter())
 print(counter())
+<<<<<<< HEAD
 print(counter())
+=======
+
+
+>>>>>>> 6517b10b9637d4811963f94ea5750e9b98ca582e

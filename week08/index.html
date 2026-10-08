@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Week 08 - FastAPI Fundamentals & Dependency Injection</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+            color: #d1d5db;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 25px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .screenshot {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e5e7eb;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #1f2937;
+            color: #d1d5db;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Week 08 - FastAPI Fundamentals & Dependency Injection</h1>
+        <p>FastAPI Tasks API with Pydantic, APIRouter and Dependency Injection</p>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <h2>About the Assignment</h2>
+
+            <p>
+                This assignment demonstrates the fundamentals of FastAPI by
+                building a Tasks API using an in-memory data store.
+                The project also demonstrates Pydantic schemas,
+                dependency injection, modular routing and automated testing.
+            </p>
+
+            <div>
+                <span class="badge">FastAPI</span>
+                <span class="badge">Pydantic</span>
+                <span class="badge">Depends()</span>
+                <span class="badge">APIRouter</span>
+                <span class="badge">Pytest</span>
+                <span class="badge">TestClient</span>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <h2>1. Swagger UI</h2>
+
+            <p>
+                FastAPI automatically provides interactive API documentation
+                through Swagger UI. The available task endpoints can be
+                tested directly from the browser.
+            </p>
+
+            <img
+                src="screenshots/swagger.png"
+                alt="FastAPI Swagger UI"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>2. Create Task - POST</h2>
+
+            <p>
+                The POST endpoint uses a Pydantic request body to create
+                a new task.
+            </p>
+
+            <img
+                src="screenshots/create-task.png"
+                alt="Create Task API"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>3. Get Tasks - Query Parameter</h2>
+
+            <p>
+                The GET endpoint supports a query parameter to filter tasks
+                based on their completed status.
+            </p>
+
+            <p>
+                Example:
+                <strong>/tasks/?completed=false</strong>
+            </p>
+
+            <img
+                src="screenshots/get-tasks.png"
+                alt="Get Tasks with Query Parameter"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>4. Get Task by ID - Path Parameter</h2>
+
+            <p>
+                The task ID is received as a path parameter and is used
+                to retrieve a specific task.
+            </p>
+
+            <p>
+                Example:
+                <strong>/tasks/1</strong>
+            </p>
+
+            <img
+                src="screenshots/get-task.png"
+                alt="Get Task by ID"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>5. Update Task - PUT</h2>
+
+            <p>
+                The PUT endpoint demonstrates the use of both a path parameter
+                and a Pydantic request body to update an existing task.
+            </p>
+
+            <img
+                src="screenshots/update-task.png"
+                alt="Update Task API"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>6. Delete Task - DELETE</h2>
+
+            <p>
+                The DELETE endpoint removes a task using its task ID.
+            </p>
+
+            <img
+                src="screenshots/delete-task.png"
+                alt="Delete Task API"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>7. Dependency Injection</h2>
+
+            <p>
+                FastAPI's <strong>Depends()</strong> is used to inject the
+                TasksService into route handlers.
+            </p>
+
+            <p>
+                This separates the API route layer from the business logic
+                implemented inside TasksService.
+            </p>
+
+            <p>
+                The dependency can also be replaced during testing using
+                <strong>app.dependency_overrides</strong>.
+            </p>
+        </section>
+
+
+        <section class="section">
+            <h2>8. Automated Tests</h2>
+
+            <p>
+                The API was tested using FastAPI TestClient and Pytest.
+                The tests also demonstrate dependency overriding with a
+                FakeTasksService.
+            </p>
+
+            <img
+                src="screenshots/tests.png"
+                alt="Pytest results"
+                class="screenshot"
+            >
+        </section>
+
+
+        <section class="section">
+            <h2>9. Assignment Requirements Completed</h2>
+
+            <ul>
+                <li>FastAPI application</li>
+                <li>Path parameters</li>
+                <li>Query parameters</li>
+                <li>Request body parameters</li>
+                <li>Pydantic request and response schemas</li>
+                <li>CRUD operations</li>
+                <li>APIRouter modular routing</li>
+                <li>Dependency Injection using Depends()</li>
+                <li>TasksService for business logic</li>
+                <li>Separation of route handlers and business logic</li>
+                <li>Swagger UI and ReDoc documentation</li>
+                <li>Dependency override for testing</li>
+                <li>Fake service for tests</li>
+                <li>Automated tests using Pytest</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Week 08 - FastAPI Fundamentals & Dependency Injection</p>
+    </footer>
+
+</body>
+</html>
