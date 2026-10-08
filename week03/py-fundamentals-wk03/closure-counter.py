@@ -23,5 +23,5 @@ print("===== Counter =====")
 print(counter())
 print(counter())
 print(counter())
-
+print(counter())
 
